@@ -9,8 +9,11 @@ GPIO.setwarnings(False)
 GPIO.setup(23, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 GPIO.setup(24, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
+clicks = 0
+
 def click23handler(channel):
-    print("Click!")
+    clicks += 1
+    print(f"Click {clicks}", end = '\r')
 
 GPIO.add_event_detect(23, GPIO.RISING, callback = click23handler, bouncetime = 100)
 
