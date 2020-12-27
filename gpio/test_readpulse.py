@@ -7,6 +7,7 @@ import os
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(23, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(24, GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 def click23handler(channel):
     print("Click!")
